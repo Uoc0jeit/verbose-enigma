@@ -1,0 +1,14 @@
+name: Security scanner
+
+on: [push, pull_request]
+
+jobs:
+  security:
+    name: Local PHP Security Checker
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: PHP Security Checker
+        uses: symfonycorp/security-checker-action@v3
